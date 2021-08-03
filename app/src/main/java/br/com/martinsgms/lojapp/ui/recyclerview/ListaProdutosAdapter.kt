@@ -10,21 +10,21 @@ import br.com.martinsgms.lojapp.R
 import br.com.martinsgms.lojapp.model.Produto
 
 class ListaProdutosAdapter(
-
     val context: Context,
-    private val produtos: List<Produto>
-
+    produtos: List<Produto> = emptyList()
 ) : RecyclerView.Adapter<ListaProdutosAdapter.ViewHolder>() {
+
+    private val produtos = produtos.toMutableList()
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         fun bind(produto: Produto) {
-            val titulo = itemView.findViewById<TextView>(R.id.titulo)
+            val titulo = itemView.findViewById<TextView>(R.id.produto_item_titulo)
             titulo.text = produto.titulo
 
-            val descricao = itemView.findViewById<TextView>(R.id.descricao)
+            val descricao = itemView.findViewById<TextView>(R.id.produto_item_descricao)
             descricao.text = produto.descricao
 
-            val valor = itemView.findViewById<TextView>(R.id.valor)
+            val valor = itemView.findViewById<TextView>(R.id.produto_item_valor)
             valor.text = produto.valor.toPlainString()
 
         }
@@ -43,5 +43,11 @@ class ListaProdutosAdapter(
     }
 
     override fun getItemCount(): Int = produtos.size
+
+    fun atualiza(produtos: List<Produto>) {
+        this.produtos.clear()
+        this.produtos.addAll(produtos)
+        notifyDataSetChanged()
+    }
 
 }

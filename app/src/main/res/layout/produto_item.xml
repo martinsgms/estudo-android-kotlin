@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <TextView
-        android:id="@+id/titulo"
+        android:id="@+id/produto_item_titulo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Celular Moto G"
@@ -18,7 +18,7 @@
         />
 
     <TextView
-        android:id="@+id/descricao"
+        android:id="@+id/produto_item_descricao"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="Boa câmera, tela OLED"
@@ -28,7 +28,7 @@
         />
 
     <TextView
-        android:id="@+id/valor"
+        android:id="@+id/produto_item_valor"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:text="R$ 1.299,99"
