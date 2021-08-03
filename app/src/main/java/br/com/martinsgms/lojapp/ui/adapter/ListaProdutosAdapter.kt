@@ -1,4 +1,4 @@
-package br.com.martinsgms.lojapp.ui.recyclerview
+package br.com.martinsgms.lojapp.ui.adapter
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -15,6 +15,7 @@ class ListaProdutosAdapter(
 ) : RecyclerView.Adapter<ListaProdutosAdapter.ViewHolder>() {
 
     private val produtos = produtos.toMutableList()
+
 
     class ViewHolder(view : View) : RecyclerView.ViewHolder(view) {
         fun bind(produto: Produto) {
